@@ -1,22 +1,27 @@
-﻿# Wipro SDET Playwright Capstone
+# Wipro SDET Playwright Capstone
 
-This repository contains my SDET capstone project work using **Playwright with JavaScript**.
+This repository contains an SDET capstone project for testing the **nopCommerce demo store** using **Playwright with JavaScript**.
 
-The selected application for testing is the **nopCommerce demo store**:
+The project is prepared as a QA automation capstone and follows the trainer's day-wise Playwright learning sequence.
 
+## Website Under Test
+
+**nopCommerce demo store**  
 https://demo.nopcommerce.com/
+
+## Project Objective
+
+The objective of this capstone is to design and automate test scenarios for a public e-commerce demo application. The project focuses on customer-facing flows such as registration, login, product browsing, search, cart, wishlist, checkout, address handling, and account-related pages.
 
 ## Capstone Requirement
 
-- Minimum 8 services/modules to be tested
+- Minimum 8 services/modules
 - 15 test cases for each service
 - Minimum 120 total test cases
 - Automation using Playwright with JavaScript
-- Project work arranged day-wise according to trainer topics
+- Day-wise implementation based on trainer topics
 
-## Testing Scope
-
-The capstone will cover these 8 services:
+## Modules Covered
 
 1. Registration and Authentication
 2. Product Catalog
@@ -27,88 +32,61 @@ The capstone will cover these 8 services:
 7. Address and Shipping
 8. Customer Support and Account
 
-## Folder Structure
+## Project Structure
 
 ```text
 Capstone_Project
-├── Capstone Day 1 - Playwright Basics
-├── Capstone Day 2 - Project Setup and First Tests
-├── Capstone Day 3 - Reports Annotations and Browser Config
-├── Capstone Day 4 - Hooks Validation and Grouped Tests
-├── Capstone Day 5 - Auth State and Advanced Assertions
-├── Capstone Day 6 - Review Test Cases and Cleanup
-├── Capstone Day 7 - POM Fixtures and Final Run
-├── Capstone_Day_Wise_Schedule.docx
-├── nopCommerce_Capstone_Testing_Plan.docx
-└── nopCommerce_Capstone_Testing_Plan.pdf
+|-- Capstone Day 1 - Playwright Basics
+|-- Capstone Day 2 - Project Setup and First Tests
+|-- Capstone Day 3 - Reports Annotations and Browser Config
+|-- Capstone Day 4 - Hooks Validation and Grouped Tests
+|-- Capstone Day 5 - Auth State and Advanced Assertions
+|-- Capstone Day 6 - Review Test Cases and Cleanup
+|-- Capstone Day 7 - POM Fixtures and Final Run
+|-- Capstone_Day_Wise_Schedule.docx
+|-- nopCommerce_Capstone_Testing_Plan.docx
+`-- nopCommerce_Capstone_Testing_Plan.pdf
 ```
 
 ## Current Progress
 
 ### Capstone Day 1 - Playwright Basics
 
-Implemented the trainer's first Playwright topic on the selected capstone website.
+Day 1 implements the first Playwright topic taught by the trainer on the selected capstone website.
 
-Covered:
+Covered work:
 
-- Import `chromium` from Playwright
-- Launch browser with `headless: false`
-- Open a new page
-- Navigate to nopCommerce demo store
-- Print page title
-- Wait 5 seconds
-- Close browser
+- Basic Playwright browser automation
+- Browser launch using Chromium
+- Page creation
+- Website navigation
+- Page title verification through terminal output
+- Browser close flow
 
-Day 1 folder contains:
+## Planned Work
 
-```text
-test.js
-package.json
-package-lock.json
-run_day1.bat
-Day_1_Playwright_Basics_Report.pdf
-```
+The remaining capstone days will continue according to the training sequence:
 
-## How To Run Day 1
+- Playwright Test project setup
+- Service-wise test files
+- Locators and assertions
+- Reports, screenshots, and traces
+- Hooks and grouped tests
+- Data-driven test scenarios
+- Authentication state handling
+- Advanced assertions
+- Page Object Model
+- Fixtures and final execution
 
-Open terminal and run:
+## Deliverables
 
-```powershell
-cd "D:\WIPRO\Capstone_Project\Capstone Day 1 - Playwright Basics"
-npm run day1
-```
+- Capstone testing plan
+- Day-wise schedule document
+- Service-wise Playwright automation files
+- Test case documentation
+- Execution reports and evidence
+- Final project summary
 
-Or double-click:
+## Note
 
-```text
-run_day1.bat
-```
-
-## Command Usage
-
-For a normal JavaScript Playwright file like Day 1:
-
-```powershell
-node test.js
-```
-
-or:
-
-```powershell
-npm run day1
-```
-
-For Playwright Test framework files like `tests/login.spec.js`, use:
-
-```powershell
-npx playwright test
-```
-
-`npx playwright test` will be used from Capstone Day 2 onward when `.spec.js` test files and `playwright.config.js` are created.
-
-## Notes
-
-- Day-wise work follows the trainer's Playwright training sequence.
-- Trainer Day 12 is considered Capstone Day 1 because Playwright started from Day 12.
-- Trainer Day 13 and Day 14 are combined because both topics are in one training folder.
-- Missing training day folders are considered holidays or non-training days.
+This project is created for SDET training and capstone submission purposes. The website used is a public demo application, and only dummy test data will be used.
