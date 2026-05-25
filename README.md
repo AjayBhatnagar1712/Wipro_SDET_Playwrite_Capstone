@@ -63,14 +63,40 @@ Covered work:
 - Page title verification through terminal output
 - Browser close flow
 
+### Capstone Day 2 - Project Setup and First Tests
+
+Day 2 implements the trainer's Playwright Test setup topics from Day 13 and Day 14.
+
+Covered work:
+
+- Playwright Test project setup
+- `playwright.config.js` configuration
+- First service-wise spec files
+- Data-driven login validation
+- Locators, form filling, click actions, and assertions
+- Reusable helper functions
+- Screenshot capture
+- ES module import/export practice
+- Basic search result validation
+
+### Capstone Day 3 - Reports Annotations and Browser Config
+
+Day 3 implements the trainer's annotations, timeout, reporting, and browser configuration topics.
+
+Covered work:
+
+- Playwright HTML report configuration
+- Trace and screenshot configuration
+- `test.skip`, `test.fail`, and `test.fixme`
+- `test.slow` and custom timeout
+- `test.step` for readable reporting
+- Role-based locators
+- Browser project configuration
+
 ## Planned Work
 
 The remaining capstone days will continue according to the training sequence:
 
-- Playwright Test project setup
-- Service-wise test files
-- Locators and assertions
-- Reports, screenshots, and traces
 - Hooks and grouped tests
 - Data-driven test scenarios
 - Authentication state handling
