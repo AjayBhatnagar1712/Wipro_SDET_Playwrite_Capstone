@@ -1,6 +1,6 @@
 // @ts-check
 import { expect } from '@playwright/test';
-import { openStorePage } from './nopCommerce.js';
+import { openStorePage } from './demoWebShop.js';
 
 export async function runScenario(page, scenario) {
   await openStorePage(page, scenario.route);

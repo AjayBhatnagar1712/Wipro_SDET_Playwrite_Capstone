@@ -8,7 +8,6 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: 1,
   timeout: 90000,
-  globalSetup: './global-setup.js',
   expect: {
     timeout: 30000,
   },
@@ -17,8 +16,7 @@ export default defineConfig({
     ['allure-playwright', { resultsDir: 'allure-results' }],
   ],
   use: {
-    baseURL: 'https://demo.nopcommerce.com',
-    storageState: 'playwright/.auth/nopcommerce-public.json',
+    baseURL: 'https://demowebshop.tricentis.com',
     actionTimeout: 20000,
     navigationTimeout: 60000,
     screenshot: 'only-on-failure',
@@ -29,6 +27,14 @@ export default defineConfig({
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
   ],
 });

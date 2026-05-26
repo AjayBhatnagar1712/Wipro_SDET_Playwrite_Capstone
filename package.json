@@ -1,7 +1,7 @@
 {
-  "name": "nopcommerce-playwright-capstone",
+  "name": "demo-web-shop-playwright-capstone",
   "version": "1.0.0",
-  "description": "Playwright JavaScript automation capstone for the nopCommerce demo store.",
+  "description": "Playwright JavaScript automation capstone for the Demo Web Shop e-commerce site.",
   "type": "module",
   "scripts": {
     "test": "playwright test",

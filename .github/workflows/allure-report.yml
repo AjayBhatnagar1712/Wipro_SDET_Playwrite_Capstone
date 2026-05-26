@@ -16,7 +16,7 @@ jobs:
   tests:
     name: Run Tests and Publish Allure Report
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Download repository
         run: |
@@ -29,10 +29,10 @@ jobs:
         run: npm ci
 
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
-        run: npx playwright test --project=chromium
+        run: npx playwright test
 
       - name: Install Allure Commandline
         if: always()

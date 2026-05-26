@@ -1,8 +1,8 @@
 # Wipro SDET Playwright Capstone
 
-This repository contains a Playwright JavaScript automation capstone for the **nopCommerce demo store**.
+This repository contains a Playwright JavaScript automation capstone for the **Demo Web Shop** e-commerce demo site.
 
-Website under test: https://demo.nopcommerce.com/
+Website under test: https://demowebshop.tricentis.com/
 
 ## Objective
 
@@ -24,6 +24,16 @@ The capstone requirement is covered with **8 services** and **15 test cases per 
 | Customer Support and Information | 15 |
 
 Total: **120 automated test cases**
+
+The same 120 test cases are executed across the configured Playwright browsers:
+
+| Browser | Executions |
+|---|---:|
+| Chromium | 120 |
+| Firefox | 120 |
+| WebKit | 120 |
+
+Total cross-browser executions: **360**
 
 ## Tech Stack
 
@@ -54,9 +64,8 @@ Capstone_Project
 |   |   |-- user-profile.spec.js
 |   |   `-- wishlist-compare.spec.js
 |   `-- support
-|       |-- nopCommerce.js
+|       |-- demoWebShop.js
 |       `-- serviceRunner.js
-|-- global-setup.js
 |-- playwright.config.js
 |-- package.json
 |-- package-lock.json
@@ -103,9 +112,9 @@ Push to main / Manual run
         |
 Install dependencies
         |
-Install Chromium browser
+Install Playwright browsers
         |
-Run all 120 Playwright test cases
+Run all 120 Playwright test cases on Chromium, Firefox, and WebKit
         |
 Generate Allure report
         |
@@ -132,14 +141,14 @@ https://<github-username>.github.io/<repository-name>/
 
 ## Current Status
 
-Latest local execution:
+Latest verified local execution after moving the project to Demo Web Shop:
 
 ```text
-120 passed
+360 passed
 0 failed
 0 skipped
 ```
 
 ## Note
 
-The selected website is a public demo application. The tests avoid aggressive repeated form submissions so the suite remains stable and does not try to bypass CAPTCHA or security verification.
+The selected website is a public demo application. The tests focus on stable guest-user catalog, cart, account, support, and checkout-page validations without aggressive repeated form submissions.
