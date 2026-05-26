@@ -95,6 +95,15 @@ Hosted report URL:
 https://ajaybhatnagar1712.github.io/Wipro_SDET_Playwrite_Capstone/
 ```
 
+## Documentation
+
+Project documentation in the root folder:
+
+- `Demo_Web_Shop_Capstone_Testing_Plan.docx`
+- `Demo_Web_Shop_Capstone_Testing_Plan.pdf`
+- `Capstone_Day_Wise_Schedule.docx`
+- `Playwright_Notes.pdf`
+
 ## CI/CD Pipeline
 
 The repository includes a GitHub Actions workflow for automated execution and report hosting:
