@@ -2,8 +2,7 @@ name: Playwright Allure Report
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main, master ]
   workflow_dispatch:
 
 permissions:
@@ -14,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  test-and-deploy:
+  tests:
     name: Run Tests and Publish Allure Report
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -25,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: lts/*
           cache: npm
 
       - name: Setup Java for Allure
@@ -37,20 +36,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browser
+      - name: Install Playwright Browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Run Playwright tests
-        run: npm test
+      - name: Run Playwright Tests
+        run: npx playwright test --project=chromium
 
       - name: Generate Allure report
         if: always()
-        run: npm run allure:generate
+        run: npx allure generate allure-results --clean -o allure-report
 
-      - name: Deploy Allure report to gh-pages
+      - name: Deploy Report to GitHub Pages
         if: always()
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: allure-report
-          clean: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report

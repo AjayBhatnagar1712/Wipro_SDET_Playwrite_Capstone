@@ -40,7 +40,7 @@ Total: **120 automated test cases**
 Capstone_Project
 |-- .github
 |   `-- workflows
-|       `-- playwright-allure-pages.yml
+|       `-- allure-report.yml
 |-- tests
 |   |-- data
 |   |   `-- serviceScenarios.js
@@ -91,7 +91,7 @@ https://ajaybhatnagar1712.github.io/Wipro_SDET_Playwrite_Capstone/
 The repository includes a GitHub Actions workflow for automated execution and report hosting:
 
 ```text
-.github/workflows/playwright-allure-pages.yml
+.github/workflows/allure-report.yml
 ```
 
 The pipeline runs when code is pushed to the `main` branch. It can also be started manually from the **Actions** tab using **Run workflow**.
