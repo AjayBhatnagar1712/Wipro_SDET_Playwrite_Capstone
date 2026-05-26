@@ -18,14 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: npm
+      - name: Download repository
+        run: |
+          curl -L "https://codeload.github.com/${GITHUB_REPOSITORY}/tar.gz/${GITHUB_SHA}" -o source.tar.gz
+          tar -xzf source.tar.gz --strip-components=1
+          node --version
+          npm --version
 
       - name: Install dependencies
         run: npm ci
