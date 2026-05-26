@@ -1,118 +1,131 @@
 # Wipro SDET Playwright Capstone
 
-This repository contains an SDET capstone project for testing the **nopCommerce demo store** using **Playwright with JavaScript**.
+This repository contains a Playwright JavaScript automation capstone for the **nopCommerce demo store**.
 
-The project is prepared as a QA automation capstone and follows the trainer's day-wise Playwright learning sequence.
+Website under test: https://demo.nopcommerce.com/
 
-## Website Under Test
+## Objective
 
-**nopCommerce demo store**  
-https://demo.nopcommerce.com/
+The project validates important customer-facing e-commerce flows using Playwright Test and generates a combined Allure report for submission and GitHub Pages hosting.
 
-## Project Objective
+## Capstone Coverage
 
-The objective of this capstone is to design and automate test scenarios for a public e-commerce demo application. The project focuses on customer-facing flows such as registration, login, product browsing, search, cart, wishlist, checkout, address handling, and account-related pages.
+The capstone requirement is covered with **8 services** and **15 test cases per service**.
 
-## Capstone Requirement
+| Service | Test Cases |
+|---|---:|
+| Authentication | 15 |
+| Product and Search | 15 |
+| Cart | 15 |
+| Wishlist and Compare | 15 |
+| User Profile and Account | 15 |
+| Address and Shipping | 15 |
+| Checkout and Payment | 15 |
+| Customer Support and Information | 15 |
 
-- Minimum 8 services/modules
-- 15 test cases for each service
-- Minimum 120 total test cases
-- Automation using Playwright with JavaScript
-- Day-wise implementation based on trainer topics
+Total: **120 automated test cases**
 
-## Modules Covered
+## Tech Stack
 
-1. Registration and Authentication
-2. Product Catalog
-3. Search and Filters
-4. Cart
-5. Wishlist and Compare
-6. Checkout and Payment
-7. Address and Shipping
-8. Customer Support and Account
+- Playwright Test
+- JavaScript
+- Node.js
+- Allure Report
+- GitHub Actions
+- GitHub Pages
 
 ## Project Structure
 
 ```text
 Capstone_Project
-|-- Capstone Day 1 - Playwright Basics
-|-- Capstone Day 2 - Project Setup and First Tests
-|-- Capstone Day 3 - Reports Annotations and Browser Config
-|-- Capstone Day 4 - Hooks Validation and Grouped Tests
-|-- Capstone Day 5 - Auth State and Advanced Assertions
-|-- Capstone Day 6 - Review Test Cases and Cleanup
-|-- Capstone Day 7 - POM Fixtures and Final Run
-|-- Capstone_Day_Wise_Schedule.docx
-|-- nopCommerce_Capstone_Testing_Plan.docx
-`-- nopCommerce_Capstone_Testing_Plan.pdf
+|-- .github
+|   `-- workflows
+|       `-- playwright-allure-pages.yml
+|-- tests
+|   |-- data
+|   |   `-- serviceScenarios.js
+|   |-- services
+|   |   |-- address-shipping.spec.js
+|   |   |-- authentication.spec.js
+|   |   |-- cart.spec.js
+|   |   |-- checkout-payment.spec.js
+|   |   |-- customer-support.spec.js
+|   |   |-- product-search.spec.js
+|   |   |-- user-profile.spec.js
+|   |   `-- wishlist-compare.spec.js
+|   `-- support
+|       |-- nopCommerce.js
+|       `-- serviceRunner.js
+|-- global-setup.js
+|-- playwright.config.js
+|-- package.json
+|-- package-lock.json
+`-- README.md
 ```
 
-## Current Progress
+## Execution
 
-### Capstone Day 1 - Playwright Basics
+```powershell
+npm install
+npx playwright test
+npx allure generate allure-results --clean -o allure-report
+npx allure open allure-report
+```
 
-Day 1 implements the first Playwright topic taught by the trainer on the selected capstone website.
+## Report
 
-Covered work:
+The project is configured to generate:
 
-- Basic Playwright browser automation
-- Browser launch using Chromium
-- Page creation
-- Website navigation
-- Page title verification through terminal output
-- Browser close flow
+- Playwright HTML report
+- Allure results
+- Allure HTML report
 
-### Capstone Day 2 - Project Setup and First Tests
+## CI/CD Pipeline
 
-Day 2 implements the trainer's Playwright Test setup topics from Day 13 and Day 14.
+The repository includes a GitHub Actions workflow for automated execution and report hosting:
 
-Covered work:
+```text
+.github/workflows/playwright-allure-pages.yml
+```
 
-- Playwright Test project setup
-- `playwright.config.js` configuration
-- First service-wise spec files
-- Data-driven login validation
-- Locators, form filling, click actions, and assertions
-- Reusable helper functions
-- Screenshot capture
-- ES module import/export practice
-- Basic search result validation
+The pipeline runs when code is pushed to the `main` branch. It can also be started manually from the **Actions** tab using **Run workflow**.
 
-### Capstone Day 3 - Reports Annotations and Browser Config
+Pipeline flow:
 
-Day 3 implements the trainer's annotations, timeout, reporting, and browser configuration topics.
+```text
+Push to main / Manual run
+        |
+Install dependencies
+        |
+Install Chromium browser
+        |
+Run all 120 Playwright test cases
+        |
+Generate Allure report
+        |
+Deploy Allure report to GitHub Pages
+```
 
-Covered work:
+After the workflow completes, the hosted Allure report is available from the deployment link shown in the GitHub Actions run and from the repository's GitHub Pages section.
 
-- Playwright HTML report configuration
-- Trace and screenshot configuration
-- `test.skip`, `test.fail`, and `test.fixme`
-- `test.slow` and custom timeout
-- `test.step` for readable reporting
-- Role-based locators
-- Browser project configuration
+GitHub Pages source should be set to **GitHub Actions** in repository settings.
 
-## Planned Work
+Expected report URL format:
 
-The remaining capstone days will continue according to the training sequence:
+```text
+https://<github-username>.github.io/<repository-name>/
+```
 
-- Hooks and grouped tests
-- Data-driven test scenarios
-- Authentication state handling
-- Advanced assertions
-- Page Object Model
-- Fixtures and final execution
+## Current Status
 
-## Deliverables
+Latest local execution:
 
-- Capstone testing plan
-- Day-wise schedule document
-- Service-wise Playwright automation files
-- Test case documentation
-- Execution reports and evidence
-- Final project summary
+```text
+120 passed
+0 failed
+0 skipped
+```
 
 ## Note
 
-This project is created for SDET training and capstone submission purposes. The website used is a public demo application, and only dummy test data will be used.
+The selected website is a public demo application. The tests avoid aggressive repeated form submissions so the suite remains stable and does not try to bypass CAPTCHA or security verification.

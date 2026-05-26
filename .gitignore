@@ -5,3 +5,7 @@ screenshots/
 .env
 allure-report/
 allure-results/
+blob-report/
+auth.json
+playwright/.auth/
+playwright/.cache/
