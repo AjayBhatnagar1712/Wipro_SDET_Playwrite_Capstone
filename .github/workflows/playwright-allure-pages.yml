@@ -7,17 +7,15 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: allure-pages
   cancel-in-progress: false
 
 jobs:
-  test:
-    name: Run Playwright Tests and Build Allure Report
+  test-and-deploy:
+    name: Run Tests and Publish Allure Report
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -49,25 +47,10 @@ jobs:
         if: always()
         run: npm run allure:generate
 
-      - name: Configure GitHub Pages
+      - name: Deploy Allure report to gh-pages
         if: always()
-        uses: actions/configure-pages@v5
-
-      - name: Upload Allure report artifact
-        if: always()
-        uses: actions/upload-pages-artifact@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: allure-report
-
-  deploy:
-    name: Deploy Allure Report to GitHub Pages
-    needs: test
-    if: always()
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          folder: allure-report
+          clean: true

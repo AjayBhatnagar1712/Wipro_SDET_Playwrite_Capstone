@@ -41,12 +41,6 @@ Capstone_Project
 |-- .github
 |   `-- workflows
 |       `-- playwright-allure-pages.yml
-|-- docs
-|   |-- index.html
-|   |-- assets
-|   |-- data
-|   |-- history
-|   `-- widgets
 |-- tests
 |   |-- data
 |   |   `-- serviceScenarios.js
@@ -85,7 +79,6 @@ The project is configured to generate:
 - Playwright HTML report
 - Allure results
 - Allure HTML report
-- Static Allure report in `docs` for GitHub Pages hosting
 
 Hosted report URL:
 
@@ -116,17 +109,19 @@ Run all 120 Playwright test cases
         |
 Generate Allure report
         |
-Deploy Allure report to GitHub Pages
+Push Allure report to gh-pages branch
+        |
+GitHub Pages hosts gh-pages / root
 ```
 
 After the workflow completes, the hosted Allure report is available from the deployment link shown in the GitHub Actions run and from the repository's GitHub Pages section.
 
-For the currently submitted report, GitHub Pages can also be hosted directly from the committed `docs` folder:
+GitHub Pages source should be set like this:
 
 ```text
 Source: Deploy from a branch
-Branch: main
-Folder: /docs
+Branch: gh-pages
+Folder: / (root)
 ```
 
 Expected report URL format:
