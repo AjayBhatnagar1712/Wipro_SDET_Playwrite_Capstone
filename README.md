@@ -41,6 +41,12 @@ Capstone_Project
 |-- .github
 |   `-- workflows
 |       `-- playwright-allure-pages.yml
+|-- docs
+|   |-- index.html
+|   |-- assets
+|   |-- data
+|   |-- history
+|   `-- widgets
 |-- tests
 |   |-- data
 |   |   `-- serviceScenarios.js
@@ -79,6 +85,13 @@ The project is configured to generate:
 - Playwright HTML report
 - Allure results
 - Allure HTML report
+- Static Allure report in `docs` for GitHub Pages hosting
+
+Hosted report URL:
+
+```text
+https://ajaybhatnagar1712.github.io/Wipro_SDET_Playwrite_Capstone/
+```
 
 ## CI/CD Pipeline
 
@@ -108,7 +121,13 @@ Deploy Allure report to GitHub Pages
 
 After the workflow completes, the hosted Allure report is available from the deployment link shown in the GitHub Actions run and from the repository's GitHub Pages section.
 
-GitHub Pages source should be set to **GitHub Actions** in repository settings.
+For the currently submitted report, GitHub Pages can also be hosted directly from the committed `docs` folder:
+
+```text
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+```
 
 Expected report URL format:
 
