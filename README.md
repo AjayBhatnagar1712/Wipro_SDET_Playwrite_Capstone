@@ -46,26 +46,44 @@ Total cross-browser executions: **360**
 
 ## Project Structure
 
+The tests follow a Page Object Model style like the training project: each spec imports its page class, creates the page object in `test.beforeEach`, and keeps the testcase name visible in the `tests` folder.
+
 ```text
 Capstone_Project
 |-- .github
 |   `-- workflows
 |       `-- allure-report.yml
+|-- api
+|   `-- apiClient.js
+|-- data
+|   `-- demoWebShopData.js
+|-- docs
+|   |-- Capstone_Day_Wise_Schedule.docx
+|   |-- Demo_Web_Shop_Capstone_Testing_Plan.docx
+|   |-- Demo_Web_Shop_Capstone_Testing_Plan.pdf
+|   `-- Playwright_Notes.pdf
+|-- fixtures
+|   `-- baseFixture.js
+|-- pages
+|   |-- addressShipping.page.js
+|   |-- authentication.page.js
+|   |-- base.page.js
+|   |-- cart.page.js
+|   |-- checkoutPayment.page.js
+|   |-- customerSupport.page.js
+|   |-- product.page.js
+|   |-- userProfile.page.js
+|   `-- wishlistCompare.page.js
+|-- screenshots
 |-- tests
-|   |-- data
-|   |   `-- serviceScenarios.js
-|   |-- services
-|   |   |-- address-shipping.spec.js
-|   |   |-- authentication.spec.js
-|   |   |-- cart.spec.js
-|   |   |-- checkout-payment.spec.js
-|   |   |-- customer-support.spec.js
-|   |   |-- product-search.spec.js
-|   |   |-- user-profile.spec.js
-|   |   `-- wishlist-compare.spec.js
-|   `-- support
-|       |-- demoWebShop.js
-|       `-- serviceRunner.js
+|   |-- address-shipping
+|   |-- authentication
+|   |-- cart
+|   |-- checkout-payment
+|   |-- customer-support
+|   |-- product
+|   |-- user-profile
+|   `-- wishlist-compare
 |-- playwright.config.js
 |-- package.json
 |-- package-lock.json
@@ -97,12 +115,12 @@ https://ajaybhatnagar1712.github.io/Wipro_SDET_Playwrite_Capstone/
 
 ## Documentation
 
-Project documentation in the root folder:
+Project documentation is available inside the `docs` folder:
 
-- `Demo_Web_Shop_Capstone_Testing_Plan.docx`
-- `Demo_Web_Shop_Capstone_Testing_Plan.pdf`
-- `Capstone_Day_Wise_Schedule.docx`
-- `Playwright_Notes.pdf`
+- `docs/Demo_Web_Shop_Capstone_Testing_Plan.docx`
+- `docs/Demo_Web_Shop_Capstone_Testing_Plan.pdf`
+- `docs/Capstone_Day_Wise_Schedule.docx`
+- `docs/Playwright_Notes.pdf`
 
 ## CI/CD Pipeline
 

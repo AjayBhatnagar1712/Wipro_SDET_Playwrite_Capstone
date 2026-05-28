@@ -32,7 +32,34 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright Tests
+        continue-on-error: true
         run: npx playwright test
+
+      - name: Verify Playwright Results
+        run: |
+          node - <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const resultsDir = path.join(process.cwd(), 'allure-results');
+          const resultFiles = fs.existsSync(resultsDir)
+            ? fs.readdirSync(resultsDir).filter((file) => file.endsWith('-result.json'))
+            : [];
+
+          const results = resultFiles.map((file) => {
+            const resultPath = path.join(resultsDir, file);
+            return JSON.parse(fs.readFileSync(resultPath, 'utf8'));
+          });
+
+          const nonPassed = results.filter((result) => result.status !== 'passed');
+          console.log(`Allure result files: ${results.length}`);
+          console.log(`Passed: ${results.filter((result) => result.status === 'passed').length}`);
+          console.log(`Non-passed: ${nonPassed.length}`);
+
+          if (results.length !== 360 || nonPassed.length > 0) {
+            console.error('Expected exactly 360 passed executions: 120 tests on Chromium, Firefox, and WebKit.');
+            process.exit(1);
+          }
+          NODE
 
       - name: Install Allure Commandline
         if: always()

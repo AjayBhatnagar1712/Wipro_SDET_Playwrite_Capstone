@@ -1,0 +1,15 @@
+// @ts-check
+import { test } from '@playwright/test';
+import { ProductPage } from '../../pages/product.page.js';
+
+test.describe('Product and Search Module', () => {
+  let productPage;
+
+  test.beforeEach(async ({ page }) => {
+    productPage = new ProductPage(page);
+  });
+
+  test('PROD-013 Book product page shows price and shipping text', async () => {
+    await productPage.verifyPROD013BookProductPageShowsPriceAndShippingText();
+  });
+});
