@@ -10,24 +10,26 @@ The project validates customer-facing e-commerce flows using Playwright Test and
 
 ## Current Progress
 
-The current pushed version contains **2 services** with **15 test cases per service**.
+The current pushed version contains **4 services** with **15 test cases per service**.
 
 | Service | Test Cases |
 |---|---:|
 | Authentication | 15 |
 | Product and Search | 15 |
+| Cart | 15 |
+| Wishlist and Compare | 15 |
 
-Total current test cases: **30**
+Total current test cases: **60**
 
 These tests run on all configured Playwright browsers.
 
 | Browser | Executions |
 |---|---:|
-| Chromium | 30 |
-| Firefox | 30 |
-| WebKit | 30 |
+| Chromium | 60 |
+| Firefox | 60 |
+| WebKit | 60 |
 
-Current Allure report total: **90 passed executions**
+Current Allure report total: **180 passed executions**
 
 ## Tech Stack
 
@@ -59,11 +61,15 @@ Capstone_Project
 |-- pages
 |   |-- authentication.page.js
 |   |-- base.page.js
-|   `-- product.page.js
+|   |-- cart.page.js
+|   |-- product.page.js
+|   `-- wishlistCompare.page.js
 |-- screenshots
 |-- tests
 |   |-- authentication
-|   `-- product
+|   |-- cart
+|   |-- product
+|   `-- wishlist-compare
 |-- playwright.config.js
 |-- package.json
 |-- package-lock.json

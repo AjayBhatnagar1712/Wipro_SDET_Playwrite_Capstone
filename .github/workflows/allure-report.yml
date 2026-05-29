@@ -33,7 +33,7 @@ jobs:
 
       - name: Run Playwright Tests
         continue-on-error: true
-        run: npx playwright test tests/authentication tests/product
+        run: npx playwright test tests/authentication tests/product tests/cart tests/wishlist-compare
 
       - name: Verify Playwright Results
         run: |
@@ -55,8 +55,8 @@ jobs:
           console.log(`Passed: ${results.filter((result) => result.status === 'passed').length}`);
           console.log(`Non-passed: ${nonPassed.length}`);
 
-          if (results.length !== 90 || nonPassed.length > 0) {
-            console.error('Expected exactly 90 passed executions: 30 tests on Chromium, Firefox, and WebKit.');
+          if (results.length !== 180 || nonPassed.length > 0) {
+            console.error('Expected exactly 180 passed executions: 60 tests on Chromium, Firefox, and WebKit.');
             process.exit(1);
           }
           NODE
