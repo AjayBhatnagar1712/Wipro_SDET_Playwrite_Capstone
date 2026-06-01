@@ -4,6 +4,8 @@ import { AuthenticationPage } from '../pages/authentication.page.js';
 import { ProductPage } from '../pages/product.page.js';
 import { CartPage } from '../pages/cart.page.js';
 import { WishlistComparePage } from '../pages/wishlistCompare.page.js';
+import { UserProfilePage } from '../pages/userProfile.page.js';
+import { AddressShippingPage } from '../pages/addressShipping.page.js';
 
 export const test = base.extend({
   authenticationPage: async ({ page }, use) => {
@@ -17,6 +19,12 @@ export const test = base.extend({
   },
   wishlistComparePage: async ({ page }, use) => {
     await use(new WishlistComparePage(page));
+  },
+  userProfilePage: async ({ page }, use) => {
+    await use(new UserProfilePage(page));
+  },
+  addressShippingPage: async ({ page }, use) => {
+    await use(new AddressShippingPage(page));
   },
 });
 
