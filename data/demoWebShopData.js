@@ -9,11 +9,13 @@ export const serviceCoverage = [
   { name: "Wishlist and Compare", testCases: 15 },
   { name: "User Profile and Account", testCases: 15 },
   { name: "Address and Shipping", testCases: 15 },
+  { name: "Checkout and Payment", testCases: 15 },
+  { name: "Customer Support and Information", testCases: 15 },
 ];
 
 export const browsers = ['chromium', 'firefox', 'webkit'];
 
 export const expectedResult = {
-  functionalTestCases: 90,
-  crossBrowserExecutions: 270,
+  functionalTestCases: 120,
+  crossBrowserExecutions: 360,
 };
