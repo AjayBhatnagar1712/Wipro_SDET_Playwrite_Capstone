@@ -10,18 +10,18 @@ The project validates customer-facing e-commerce flows using Playwright Test and
 
 ## Current Progress
 
-The current pushed version contains **8 services** with **15 test cases per service**.
+The project contains **6 core modules** and **2 add-on modules** with **15 test cases per module**.
 
-| Service | Test Cases |
-|---|---:|
-| Authentication | 15 |
-| Product and Search | 15 |
-| Cart | 15 |
-| Wishlist and Compare | 15 |
-| User Profile and Account | 15 |
-| Address and Shipping | 15 |
-| Checkout and Payment | 15 |
-| Customer Support and Information | 15 |
+| Module Type | Module | Test Cases |
+|---|---|---:|
+| Core Module | Authentication | 15 |
+| Core Module | Product and Search | 15 |
+| Core Module | Cart | 15 |
+| Core Module | Wishlist and Compare | 15 |
+| Core Module | User Profile and Account | 15 |
+| Core Module | Address and Shipping | 15 |
+| Add on Module | Add on - Checkout and Payment | 15 |
+| Add on Module | Add on - Customer Support and Information | 15 |
 
 Total current test cases: **120**
 
@@ -56,9 +56,11 @@ Capstone_Project
 |-- data
 |   `-- demoWebShopData.js
 |-- docs
-|   |-- Capstone_Day_Wise_Schedule.docx
-|   |-- Demo_Web_Shop_Capstone_Testing_Plan.docx
-|   |-- Demo_Web_Shop_Capstone_Testing_Plan.pdf
+|   |-- Demo_Web_Shop_Capstone_Day_Wise_Testing_Plan.docx
+|   |-- Demo_Web_Shop_Capstone_Day_Wise_Testing_Plan.pdf
+|   |-- Demo_Web_Shop_Playwright_Capstone_Final_Report.docx
+|   |-- Demo_Web_Shop_Playwright_Capstone_Final_Report.pdf
+|   |-- Playwright_Notes.docx
 |   `-- Playwright_Notes.pdf
 |-- fixtures
 |   `-- baseFixture.js
@@ -77,8 +79,8 @@ Capstone_Project
 |   |-- address-shipping
 |   |-- authentication
 |   |-- cart
-|   |-- checkout-payment
-|   |-- customer-support
+|   |-- add-on-checkout-payment
+|   |-- add-on-customer-support
 |   |-- product
 |   |-- user-profile
 |   `-- wishlist-compare
